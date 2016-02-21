@@ -24,6 +24,7 @@ public class StarterApplication extends Application {
     // Enable Local Datastore.
     Parse.enableLocalDatastore(this);
 
+    // help
     // Add your initialization code here
     Parse.initialize(this);
 
