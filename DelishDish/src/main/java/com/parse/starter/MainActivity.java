@@ -124,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements recipeFetcherCall
 
   @Override
   public void callback(List<Recipe> recipeList) {
-    updateTable(recipeList);
+    // TODO: Pass recipe list to UI stuffs
   }
 
   public void updateTable(final List<Recipe> recipeList) {
