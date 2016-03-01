@@ -1,13 +1,6 @@
 package com.parse.starter;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.starter.Ingredient;
-
-import org.json.JSONArray;
-import org.json.JSONException;
+import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +16,7 @@ public class Recipe {
     private String category;
     private List<Ingredient> ingredients = new ArrayList<Ingredient>();
     private List<String> instructions = new ArrayList<String>();
+    private Drawable image;
 
     public Recipe (String title,
                    String imageLink,
@@ -62,6 +56,9 @@ public class Recipe {
     public List<String> getInstructions() {
         return Collections.unmodifiableList(instructions);
     }
+    public Drawable getImage() {
+        return image;
+    }
 
     // Setters
     public void setTitle(String title) {
@@ -78,6 +75,9 @@ public class Recipe {
     }
     public void setInstructions(List<String> instructions) {
         this.instructions = instructions;
+    }
+    public void setImage(Drawable image) {
+        this.image = image;
     }
 
 
