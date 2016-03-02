@@ -1,28 +1,23 @@
 package com.parse.starter;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.starter.Ingredient;
-
-import org.json.JSONArray;
-import org.json.JSONException;
+import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by jakegraham on 2/21/16.
  */
-public class Recipe {
+public class Recipe implements Parcelable {
 
     private String title;
     private String imageLink;
     private String category;
     private List<Ingredient> ingredients = new ArrayList<Ingredient>();
     private List<String> instructions = new ArrayList<String>();
+    private Drawable image;
 
     public Recipe (String title,
                    String imageLink,
@@ -35,6 +30,26 @@ public class Recipe {
         this.ingredients = ingredients;
         this.instructions = instructions;
     }
+
+    protected Recipe(Parcel in) {
+        title = in.readString();
+        imageLink = in.readString();
+        category = in.readString();
+        ingredients = in.createTypedArrayList(Ingredient.CREATOR);
+        instructions = in.createStringArrayList();
+    }
+
+    public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
+        @Override
+        public Recipe createFromParcel(Parcel in) {
+            return new Recipe(in);
+        }
+
+        @Override
+        public Recipe[] newArray(int size) {
+            return new Recipe[size];
+        }
+    };
 
     // Add an ingredient to the ingredients list
     public void addIngredient(Ingredient ingredient) {
@@ -57,10 +72,13 @@ public class Recipe {
         return category;
     }
     public List<Ingredient> getIngredients() {
-        return Collections.unmodifiableList(ingredients);
+        return ingredients;
     }
     public List<String> getInstructions() {
-        return Collections.unmodifiableList(instructions);
+        return instructions;
+    }
+    public Drawable getImage() {
+        return image;
     }
 
     // Setters
@@ -79,6 +97,22 @@ public class Recipe {
     public void setInstructions(List<String> instructions) {
         this.instructions = instructions;
     }
+    public void setImage(Drawable image) {
+        this.image = image;
+    }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(imageLink);
+        dest.writeString(category);
+        dest.writeTypedList(ingredients);
+        dest.writeStringList(instructions);
+    }
 }

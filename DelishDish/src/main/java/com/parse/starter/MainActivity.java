@@ -1,42 +1,28 @@
 package com.parse.starter;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.content.res.Configuration;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.parse.FindCallback;
 import com.parse.ParseAnalytics;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-import com.parse.starter.Recipe;
-import com.parse.starter.Ingredient;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.InputStream;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends ActionBarActivity implements recipeFetcherCallback{
+public class MainActivity extends AppCompatActivity implements recipeFetcherCallback{
 
   /**
    * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -44,20 +30,96 @@ public class MainActivity extends ActionBarActivity implements recipeFetcherCall
    */
   private GoogleApiClient client;
 
+  private DrawerLayout mDrawer;
+  private Toolbar toolbar;
+  private NavigationView nvDrawer;
+  private ActionBarDrawerToggle drawerToggle;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    // TODO (jake): Begin activity indicator
+    //Set the fragment initially
+    BrowseFragment fragment = new BrowseFragment();
+    android.support.v4.app.FragmentTransaction fragmentTransaction =
+            getSupportFragmentManager().beginTransaction();
 
-    RecipeFetcher rf = new RecipeFetcher(this, null);
-    rf.getAllRecipes();
+    fragmentTransaction.replace(R.id.flContent, fragment);
+    fragmentTransaction.commit();
+
+    // Set a Toolbar to replace the ActionBar.
+    toolbar = (Toolbar) findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
+
+    // Find our drawer view
+    mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+    drawerToggle = setupDrawerToggle();
+
+    // Tie DrawerLayout events to the ActionBarToggle
+    mDrawer.setDrawerListener(drawerToggle);
+
+    // Find our drawer view
+    nvDrawer = (NavigationView) findViewById(R.id.nvView);
+    // Setup drawer view
+    setupDrawerContent(nvDrawer);
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
     // ATTENTION: This was auto-generated to implement the App Indexing API.
     // See https://g.co/AppIndexing/AndroidStudio for more information.
     client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+  }
+
+  private ActionBarDrawerToggle setupDrawerToggle() {
+    return new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open,  R.string.drawer_close);
+  }
+
+  private void setupDrawerContent(NavigationView navigationView) {
+    navigationView.setNavigationItemSelectedListener(
+            new NavigationView.OnNavigationItemSelectedListener() {
+              @Override
+              public boolean onNavigationItemSelected(MenuItem menuItem) {
+                selectDrawerItem(menuItem);
+                return true;
+              }
+            });
+  }
+
+  public void selectDrawerItem(MenuItem menuItem) {
+    // Create a new fragment and specify the planet to show based on
+    // position
+    Fragment fragment = null;
+
+    Class fragmentClass;
+
+    switch(menuItem.getItemId()) {
+      case R.id.nav_first_fragment:
+        fragmentClass = BrowseFragment.class;
+        break;
+      case R.id.nav_second_fragment:
+        fragmentClass = CookbookFragment.class;
+        break;
+      case R.id.nav_third_fragment:
+        fragmentClass = BrowseFragment.class;
+        break;
+      default:
+        fragmentClass = BrowseFragment.class;
+    }
+
+    try {
+      fragment = (Fragment) fragmentClass.newInstance();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+    // Insert the fragment by replacing any existing fragment
+    FragmentManager fragmentManager = getSupportFragmentManager();
+    fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+    // Highlight the selected item, update the title, and close the drawer
+    menuItem.setChecked(true);
+    setTitle(menuItem.getTitle());
+    mDrawer.closeDrawers();
   }
 
   @Override
@@ -69,17 +131,34 @@ public class MainActivity extends ActionBarActivity implements recipeFetcherCall
 
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
-    // Handle action bar item clicks here. The action bar will
-    // automatically handle clicks on the Home/Up button, so long
-    // as you specify a parent activity in AndroidManifest.xml.
-    int id = item.getItemId();
+    // The action bar home/up action should open or close the drawer.
+    switch (item.getItemId()) {
+      case android.R.id.home:
+        mDrawer.openDrawer(GravityCompat.START);
+        return true;
+    }
 
-    //noinspection SimplifiableIfStatement
-    if (id == R.id.action_settings) {
+    if (drawerToggle.onOptionsItemSelected(item)) {
       return true;
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  // `onPostCreate` called when activity start-up is complete after `onStart()`
+  // NOTE! Make sure to override the method with only a single `Bundle` argument
+  @Override
+  protected void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+    // Sync the toggle state after onRestoreInstanceState has occurred.
+    drawerToggle.syncState();
+  }
+
+  @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    // Pass any configuration change to the drawer toggles
+    drawerToggle.onConfigurationChanged(newConfig);
   }
 
   @Override
@@ -125,68 +204,7 @@ public class MainActivity extends ActionBarActivity implements recipeFetcherCall
   @Override
   public void callback(List<Recipe> recipeList) {
     // TODO: Pass recipe list to UI stuffs
+    // updateTable(recipeList);
   }
 
-  public void updateTable(final List<Recipe> recipeList) {
-    final List<TableRow> rows = new ArrayList<TableRow>();
-    final int[] count = {0};
-    for (int i = 0; i < recipeList.size(); i++) {
-      // create a new TableRow
-      final TableRow row = new TableRow(this);
-
-      // create a new TextView
-      final TextView t = new TextView(this);
-      // set the text to "text xx"
-      t.setText(recipeList.get(i).getTitle());
-      final ImageView imageView = new ImageView(this);
-
-      final Drawable[] bmp = new Drawable[1];
-
-      final int finalI = i;
-      new AsyncTask<Void, Void, Void>() {
-        @Override
-        protected Void doInBackground(Void... params) {
-          try {
-            InputStream in = (InputStream) new URL(recipeList.get(finalI).getImageLink()).getContent();
-            bmp[0] = Drawable.createFromStream(in, "src name");
-            Bitmap b = Bitmap.createScaledBitmap(((BitmapDrawable)bmp[0]).getBitmap(), 150, 150, false);
-            bmp[0] = new BitmapDrawable(getResources(), b);
-          } catch (Exception e) {
-            // log error
-          }
-          return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-          if (bmp[0] != null)
-            imageView.setImageDrawable(bmp[0]);
-          // add the TextView and the CheckBox to the new TableRow
-          row.addView(t);
-          row.addView(imageView);
-          row.setPadding(10,10,10,10);
-          rows.add(row);
-
-          count[0]++;
-          // Only update table after all rows have been formatted
-          if (count[0] == recipeList.size()) {
-            updateRows(rows);
-          }
-        }
-
-      }.execute();
-
-
-    }
-  }
-
-  public void updateRows(List<TableRow> rows) {
-    // get a reference for the TableLayout
-    TableLayout table = (TableLayout) findViewById(R.id.TableLayout01);
-    for (int i = 0; i < rows.size(); i++) {
-      // TODO (jake): Remove activity indicator
-      table.addView(rows.get(i), new TableLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-              ViewGroup.LayoutParams.WRAP_CONTENT));
-    }
-  }
 }
