@@ -7,7 +7,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Spice Rack"
+        android:text="Cookbook Placeholder"
         android:padding="9dp"
         android:textColor="#FFF"
         android:background="#FF0000"

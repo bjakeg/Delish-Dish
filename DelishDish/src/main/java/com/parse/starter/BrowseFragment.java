@@ -1,18 +1,24 @@
 package com.parse.starter;
 
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,6 +38,22 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_browse, container, false);
         listView = (ListView) rootView.findViewById(R.id.recipe_list_view);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+
+                Recipe recipe = (Recipe) parent.getItemAtPosition(position);
+                Intent myIntent = new Intent(getActivity(), RecipeActivity.class);
+                Bitmap image = ((BitmapDrawable) recipe.getImage()).getBitmap();
+                myIntent.putExtra("Title", recipe.getTitle());
+                myIntent.putExtra("Category", recipe.getCategory());
+                myIntent.putStringArrayListExtra("Instruction", (ArrayList<String>) recipe.getInstructions());
+                myIntent.putExtra("Image", image);
+                myIntent.putParcelableArrayListExtra("Ingredients", (ArrayList<? extends Parcelable>) recipe.getIngredients());
+                getActivity().startActivity(myIntent);
+            }
+        });
 
         // TODO (jake): Begin activity indicator
         RecipeFetcher rf = new RecipeFetcher(this, null);
@@ -84,6 +106,7 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
     }
 
     private void updateListView(List<Recipe> recipeList) {
+        // TODO: End activity indicator
         BrowseRowAdapter adapter = new BrowseRowAdapter(listView.getContext(), recipeList);
         listView.setAdapter(adapter);
     }

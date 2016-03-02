@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:10:1-45:12
+ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:10:1-46:12
 	package
 		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:11:5-32
 		INJECTED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidMani
 	android:name
 		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:14:22-76
 application
-ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:16:5-43:19
+ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:16:5-44:19
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.0] /Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:22.2.0] /Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/design/22.2.0/AndroidManifest.xml:22:5-20
@@ -70,13 +70,19 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:35:17-77
 	android:name
 		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:35:27-74
+activity#com.parse.starter.RecipeActivity
+ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:38:9-84
+	android:label
+		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:38:19-51
+	android:name
+		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:38:52-82
 meta-data#com.google.android.gms.version
-ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:40:9-42:69
+ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:41:9-43:69
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] /Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:42:13-66
+		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:43:13-66
 	android:name
-		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:41:13-58
+		ADDED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml:42:13-58
 uses-sdk
 INJECTED from /Users/jakegraham/Desktop/Delish Dish/DelishDish/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.0] /Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/AndroidManifest.xml:20:5-43
