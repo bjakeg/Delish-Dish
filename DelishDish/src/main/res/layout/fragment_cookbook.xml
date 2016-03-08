@@ -4,17 +4,10 @@
     android:layout_height="match_parent"
     tools:context="com.example.samarsatyal.navigationdrawer.GalleryFragment">
 
-    <Button
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/cookbook_list_view"
         android:layout_height="wrap_content"
-        android:text="Cookbook Placeholder"
-        android:padding="9dp"
-        android:textColor="#FFF"
-        android:background="#FF0000"
-        android:textSize="28sp"
-        android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent">
+    </ListView>
 
-        />
 </RelativeLayout>
