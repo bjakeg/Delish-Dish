@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,6 +28,7 @@ import java.util.List;
  */
 public class BrowseFragment extends Fragment implements recipeFetcherCallback {
     ListView listView;
+    ProgressDialog activityIndicator;
 
     public BrowseFragment() {
         // Required empty public constructor
@@ -56,6 +58,13 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
         });
 
         // TODO (jake): Begin activity indicator
+        activityIndicator = new ProgressDialog(this.getActivity());
+        activityIndicator.setCancelable(false);
+        activityIndicator.setMessage("Loading...Please Wait (00.0%)");
+        activityIndicator.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        activityIndicator.setIndeterminate(true);
+        activityIndicator.show();
+
         RecipeFetcher rf = new RecipeFetcher(this, null);
         rf.getAllRecipes();
 
@@ -93,6 +102,11 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
                         recipeList.get(finalI).setImage(bmp[0]);
 
                     count[0]++;
+
+                    activityIndicator.setMessage("Loading...Please Wait (" +
+                                                 String.format("%2.1f", ((float)count[0]/(float)recipeList.size())*100) +
+                                                "%)");
+
                     // Only update table after all rows have been formatted
                     if (count[0] == recipeList.size()) {
                        updateListView(recipeList);
@@ -106,7 +120,7 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
     }
 
     private void updateListView(List<Recipe> recipeList) {
-        // TODO: End activity indicator
+        activityIndicator.dismiss();
         BrowseRowAdapter adapter = new BrowseRowAdapter(listView.getContext(), recipeList);
         listView.setAdapter(adapter);
     }

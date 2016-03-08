@@ -37,7 +37,7 @@ public class RecipeActivity extends AppCompatActivity {
         String ingredientString = "";
         for(int i = 0; i < ingredientList.size(); i++) {
             Ingredient ingredient = ingredientList.get(i);
-            ingredientString += (i+1) + ".\t" + ingredient.getQuantity() +
+            ingredientString += "\t" + ingredient.getQuantity() +
                                 "\t" + ingredient.getTitle() + "\t" +
                                 "(" + ingredient.getAmount() + ")\n";
         }
@@ -46,10 +46,10 @@ public class RecipeActivity extends AppCompatActivity {
         String instructionsString = "";
         for(int i = 0; i < instructionList.size(); i++) {
             String instruction = instructionList.get(i);
-            instructionsString += (i+1) + ".\t" + instruction + "\n";
+            instructionsString += (i+1) + ".\t" + instruction + "\n\n";
         }
         instructionsView.setText(instructionsString);
-        String blank = "blank;";
+
     }
 
 }
