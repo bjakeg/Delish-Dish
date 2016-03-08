@@ -61,6 +61,7 @@ public class CookbookFragment extends Fragment {
                 myIntent.putStringArrayListExtra("Instruction", (ArrayList<String>) recipe.getInstructions());
                 myIntent.putExtra("Image", image);
                 myIntent.putParcelableArrayListExtra("Ingredients", (ArrayList<? extends Parcelable>) recipe.getIngredients());
+                myIntent.putExtra("Sender", "Cookbook");
                 getActivity().startActivity(myIntent);
             }
         });

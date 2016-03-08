@@ -1,14 +1,17 @@
 package com.parse.starter;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -32,9 +35,10 @@ public class RecipeActivity extends AppCompatActivity {
 
         mydb = new DBHelper(this);
 
-        addButtonListener();
-
         Bundle extras = getIntent().getExtras();
+
+        boolean buttonFlag = extras.getString("Sender") != null && extras.getString("Sender").equals("Cookbook");
+        addButtonListener(buttonFlag);
 
         image = (Bitmap) extras.get("Image");
         ingredientList = extras.getParcelableArrayList("Ingredients");
@@ -69,8 +73,12 @@ public class RecipeActivity extends AppCompatActivity {
 
     }
 
-    public void addButtonListener() {
+    public void addButtonListener(boolean flag) {
         addButton = (Button) findViewById(R.id.add_button);
+
+        if (flag) {
+            addButton.setVisibility(View.GONE);
+        }
 
         addButton.setOnClickListener(new View.OnClickListener() {
 
@@ -80,6 +88,12 @@ public class RecipeActivity extends AppCompatActivity {
                 Drawable d = new BitmapDrawable(getResources(), image);
                 newRecipe.setImage(d);
                 mydb.insertRecipe(newRecipe);
+                Toast confirmation = Toast.makeText(getApplicationContext(), "Recipe added to cookbook", Toast.LENGTH_SHORT);
+                confirmation.setGravity(Gravity.BOTTOM, 0, 400);
+                View view = confirmation.getView();
+                view.setBackgroundColor(Color.RED);
+                view.setAlpha((float)0.75);
+                confirmation.show();
             }
 
         });
