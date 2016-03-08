@@ -2058,7 +2058,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c0056;
         public static final int action_mode_bar_stub=0x7f0c0055;
         public static final int action_mode_close_button=0x7f0c003e;
-        public static final int action_settings=0x7f0c0086;
+        public static final int action_settings=0x7f0c0085;
         public static final int activity_chooser_view_content=0x7f0c003f;
         public static final int adjust_height=0x7f0c002b;
         public static final int adjust_width=0x7f0c002c;
@@ -2115,7 +2115,6 @@ containing a value of this type.
         public static final int multiply=0x7f0c0037;
         public static final int nav_first_fragment=0x7f0c0083;
         public static final int nav_second_fragment=0x7f0c0084;
-        public static final int nav_third_fragment=0x7f0c0085;
         public static final int never=0x7f0c0030;
         public static final int none=0x7f0c000f;
         public static final int normal=0x7f0c000b;
