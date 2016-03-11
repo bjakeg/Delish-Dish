@@ -99,9 +99,6 @@ public class MainActivity extends AppCompatActivity implements recipeFetcherCall
       case R.id.nav_second_fragment:
         fragmentClass = CookbookFragment.class;
         break;
-      case R.id.nav_third_fragment:
-        fragmentClass = BrowseFragment.class;
-        break;
       default:
         fragmentClass = BrowseFragment.class;
     }
