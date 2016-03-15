@@ -2058,9 +2058,10 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c0056;
         public static final int action_mode_bar_stub=0x7f0c0055;
         public static final int action_mode_close_button=0x7f0c003e;
-        public static final int action_settings=0x7f0c008d;
+        public static final int action_settings=0x7f0c008e;
         public static final int activity_chooser_view_content=0x7f0c003f;
         public static final int add_button=0x7f0c006f;
+        public static final int add_grocery_item=0x7f0c008d;
         public static final int adjust_height=0x7f0c002b;
         public static final int adjust_width=0x7f0c002c;
         public static final int alertTitle=0x7f0c0049;
@@ -2253,7 +2254,8 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int drawer_view=0x7f0d0000;
-        public static final int menu_main=0x7f0d0001;
+        public static final int fragment_grocery_menu=0x7f0d0001;
+        public static final int menu_main=0x7f0d0002;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
