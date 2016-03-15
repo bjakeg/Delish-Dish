@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class CookbookFragment extends Fragment {
     ListView listView;
-    DBHelper mydb;
+    CookbookDB mydb;
 
     public CookbookFragment() {
         // Required empty public constructor
@@ -35,7 +35,7 @@ public class CookbookFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_cookbook, container, false);
 
-        mydb = new DBHelper(this.getActivity());
+        mydb = new CookbookDB(this.getActivity());
 
         List<Recipe> recipeList = mydb.getAllRecipes();
 
