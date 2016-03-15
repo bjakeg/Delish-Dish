@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Delish Dish.iml" filepath="$PROJECT_DIR$/Delish Dish.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Delish-Dish.iml" filepath="$PROJECT_DIR$/Delish-Dish.iml" />
       <module fileurl="file://$PROJECT_DIR$/DelishDish/DelishDish.iml" filepath="$PROJECT_DIR$/DelishDish/DelishDish.iml" />
     </modules>
   </component>
