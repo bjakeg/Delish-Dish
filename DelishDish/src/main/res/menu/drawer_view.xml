@@ -2,13 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_first_fragment"
+            android:id="@+id/nav_browse_fragment"
             android:icon="@drawable/ic_menu_send"
             android:title="Browse"
             />
         <item
-            android:id="@+id/nav_second_fragment"
+            android:id="@+id/nav_cookbook_fragment"
             android:icon="@drawable/ic_menu_send"
             android:title="Cookbook" />
+        <item
+            android:id="@+id/nav_pantry_fragment"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Pantry" />
+        <item
+            android:id="@+id/nav_grocery_fragment"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Grocery List" />
     </group>
 </menu>
