@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by jakegraham on 3/7/16.
  */
-public class DBHelper extends SQLiteOpenHelper {
+public class CookbookDB extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Recipes.db";
     public static final String RECIPES_TABLE_NAME = "recipes";
@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String RECIPES_COLUMN_CATEGORY = "category";
     public static final String RECIPES_COLUMN_IMAGE = "image";
 
-    public DBHelper(Context context) {
+    public CookbookDB(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 

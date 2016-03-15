@@ -21,7 +21,7 @@ import java.util.List;
 public class RecipeActivity extends AppCompatActivity {
 
     Button addButton;
-    DBHelper mydb;
+    CookbookDB mydb;
     List<Ingredient> ingredientList;
     List<String> instructionList;
     String title;
@@ -33,7 +33,7 @@ public class RecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
 
-        mydb = new DBHelper(this);
+        mydb = new CookbookDB(this);
 
         Bundle extras = getIntent().getExtras();
 
