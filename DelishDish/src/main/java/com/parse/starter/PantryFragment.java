@@ -23,7 +23,7 @@ public class PantryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_cookbook, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_pantry, container, false);
 
         listView = (ListView) rootView.findViewById(R.id.pantry_list_view);
 
