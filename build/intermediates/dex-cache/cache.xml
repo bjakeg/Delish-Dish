@@ -2,67 +2,67 @@
 <items version="2" >
 
     <item
-        jar="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-41c087bf3380eafe1ea16a572071a34466f94446.jar" />
-    </item>
-    <item
-        jar="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jar="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-fa50dbb37a7b1537a80acfbbb104bbb3bdf48bd8.jar" />
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-7ffefc5fd0ba0dc046b94e39070ec91ae0a2b67e.jar" />
     </item>
     <item
-        jar="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jar="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-668527fd3fe9bf8af684f4021d98c7ed57cc3591.jar" />
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-15e733d25d6ef8a2e9596d0a2655393120c30746.jar" />
     </item>
     <item
-        jar="/Users/jakegraham/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jar="/Users/david/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-579e8c44a63bdd813fa7addc965272fe6b61b580.jar" />
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-f44f38afa7bf8fcfff0a500d2820547977d4a7d9.jar" />
     </item>
     <item
-        jar="/Users/jakegraham/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jar="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-133b4683a1c4c882d6336d41158225532dae675e.jar" />
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-09fc7a591af4cd6d2f1ada56eda869cb5f227246.jar" />
     </item>
     <item
-        jar="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-18a4dc8190569e9637497812f0285eb089d13235.jar" />
-    </item>
-    <item
-        jar="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-9e5b7afbc81e495bfb20aaaef0abb5d14d3ee0e6.jar" />
-    </item>
-    <item
-        jar="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jar="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-8f0fde5dc0889237d13a71ad5b2031170dc6df4d.jar" />
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-824cd6f5273f2e2fe8bcbbe8d41960b35f53880f.jar" />
     </item>
     <item
-        jar="/Users/jakegraham/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.0/58a7d54b6a4f28be11f0cecec93097eddf473e6f/parse-android-1.13.0.jar"
+        jar="/Users/david/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-4c3a44063821348784ba0c02696acc59061238ba.jar" />
+    </item>
+    <item
+        jar="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-ef0960a51b6b3f42483205fe59129302a6cb40ec.jar" />
+    </item>
+    <item
+        jar="/Users/david/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.0/58a7d54b6a4f28be11f0cecec93097eddf473e6f/parse-android-1.13.0.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="58a7d54b6a4f28be11f0cecec93097eddf473e6f">
-        <dex dex="/Users/jakegraham/Desktop/Delish Dish/DelishDish/build/intermediates/pre-dexed/debug/parse-android-1.13.0-a94d3ae442c23a33064361e307ef14c2f65a42bd.jar" />
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/parse-android-1.13.0-b89cbc4cb540c165a0c5515ac22cc47b9d05bcc2.jar" />
+    </item>
+    <item
+        jar="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/david/AndroidStudioProjects/Delish-Dish/DelishDish/build/intermediates/pre-dexed/debug/classes-f929a4421efb8631a7bac1485ae78a82ab74cddd.jar" />
     </item>
 
 </items>
