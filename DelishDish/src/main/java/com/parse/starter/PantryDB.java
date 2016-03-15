@@ -5,12 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by david on 3/15/16.
@@ -21,7 +17,7 @@ public class PantryDB extends SQLiteOpenHelper {
     public static final String PANTRY_TABLE_NAME = "pantry";
     public static final String PANTRY_COLUMN_ID =  "id";
     public static final String PANTRY_COLUMN_TITLE = "title";
-    public static final String PANTRY_COLUMN_AMOUNT = "ingredients";
+    public static final String PANTRY_COLUMN_AMOUNT = "amount";
     public static final String PANTRY_COLUMN_QUANTITY = "quantity";
 
     public PantryDB(Context context) {
