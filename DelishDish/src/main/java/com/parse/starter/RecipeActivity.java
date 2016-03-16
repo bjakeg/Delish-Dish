@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,7 +50,7 @@ public class RecipeActivity extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.recipe_main_image);
         TextView titleView = (TextView) findViewById(R.id.recipe_main_title);
-        TextView ingredientsView = (TextView) findViewById(R.id.recipe_main_ingredients);
+        //TextView ingredientsView = (TextView) findViewById(R.id.recipe_main_ingredients);
         TextView instructionsView = (TextView) findViewById(R.id.recipe_main_instructions);
 
         imageView.setImageBitmap(image);
@@ -62,7 +63,15 @@ public class RecipeActivity extends AppCompatActivity {
                                 "\t" + ingredient.getTitle() + "\t" +
                                 "(" + ingredient.getAmount() + ")\n";
         }
-        ingredientsView.setText(ingredientString);
+        //ingredientsView.setText(ingredientString);
+        LinearLayout ingredientsListView = (LinearLayout) findViewById(R.id.ingredient_list_view);
+
+        IngredientAddAdapter adapter = new IngredientAddAdapter(ingredientsListView.getContext(), ingredientList);
+        for(int i = 0; i < adapter.getCount(); i++) {
+            View item = adapter.getView(i, null, null);
+            ingredientsListView.addView(item);
+        }
+
 
         String instructionsString = "";
         for(int i = 0; i < instructionList.size(); i++) {
