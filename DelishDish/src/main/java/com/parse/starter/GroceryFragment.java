@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by jakegraham on 3/15/16.
  */
-public class GroceryFragment extends Fragment {
+public class GroceryFragment extends Fragment implements CookbookRemoveCallback {
     ListView listView;
     GroceryDB groceryDB;
 
@@ -101,6 +101,9 @@ public class GroceryFragment extends Fragment {
 
 
                 return true;
+            case R.id.remove_grocery_item:
+                updateListRemove();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -112,5 +115,18 @@ public class GroceryFragment extends Fragment {
 
         IngredientListAdapter adapter = new IngredientListAdapter(listView.getContext(), ingredientList);
         listView.setAdapter(adapter);
+    }
+
+    public void updateListRemove() {
+        List<Ingredient> ingredientList = new ArrayList<Ingredient>();
+        ingredientList = groceryDB.getAllIngredients();
+
+        CookbookRemoveAdapter adapter = new CookbookRemoveAdapter(listView.getContext(), ingredientList, this);
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void itemDeleted() {
+        updateList();
     }
 }

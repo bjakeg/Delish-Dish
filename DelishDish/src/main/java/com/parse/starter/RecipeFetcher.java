@@ -1,5 +1,7 @@
 package com.parse.starter;
 
+import android.os.CountDownTimer;
+
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -26,9 +28,22 @@ public class RecipeFetcher {
     public void getAllRecipes() {
         final List<Recipe> recipeList = new ArrayList<Recipe>();
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Recipe");
+        final ParseQuery<ParseObject> query = ParseQuery.getQuery("Recipe");
         query.include("Ingredients");
         query.include("ingredients");
+        final CountDownTimer timer = new CountDownTimer(2000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                query.cancel();
+                rc.callback(null);
+            }
+        };
+        timer.start();
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> text, ParseException e) {
@@ -64,9 +79,13 @@ public class RecipeFetcher {
                         recipeList.add(newRecipe);
                     }
                     System.out.println(recipeList.toString());
+                    timer.cancel();
                     rc.callback(recipeList);
+
                 } else {
                     System.out.println("Had an issue");
+                    timer.cancel();
+                    rc.callback(null);
                 }
             }
         });

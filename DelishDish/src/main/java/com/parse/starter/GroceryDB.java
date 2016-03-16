@@ -70,4 +70,12 @@ public class GroceryDB extends SQLiteOpenHelper {
         return ingredientList;
     }
 
+    public Integer deleteIngredient (String title)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(GROCERY_LIST_TABLE_NAME,
+                "title = ?",
+                new String[] { title});
+    }
+
 }

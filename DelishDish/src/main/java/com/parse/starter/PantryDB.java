@@ -72,4 +72,12 @@ public class PantryDB extends SQLiteOpenHelper {
 
         return ingredientList;
     }
+
+    public Integer deleteIngredient (String title)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(PANTRY_TABLE_NAME,
+                "title = ?",
+                new String[] { title});
+    }
 }

@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +75,11 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
 
     @Override
     public void callback(List<Recipe> recipeList) {
-        fillImages(recipeList);
+        if (recipeList != null) {
+            fillImages(recipeList);
+        } else {
+            activityIndicator.dismiss();
+        }
     }
 
     public void fillImages(final List<Recipe> recipeList) {
@@ -92,6 +97,7 @@ public class BrowseFragment extends Fragment implements recipeFetcherCallback {
                         bmp[0] = Drawable.createFromStream(in, "src name");
                     } catch (Exception e) {
                         // log error
+                        Log.d("8", "error getting them");
                     }
                     return null;
                 }
