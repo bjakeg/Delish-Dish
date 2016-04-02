@@ -49,21 +49,15 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+
+
+        <LinearLayout
+            android:id="@+id/ingredient_list_view"
             android:layout_height="wrap_content"
-            android:paddingBottom="30dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:layout_width="match_parent"
+            android:orientation="vertical" />
 
-            <TextView android:id="@+id/recipe_main_ingredients"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:text="Hello, I am a TextView" />
 
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"

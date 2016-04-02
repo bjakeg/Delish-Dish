@@ -15,14 +15,14 @@ import static android.view.View.OnClickListener;
 /**
  * Created by jakegraham on 3/15/16.
  */
-public class CookbookRemoveAdapter extends ArrayAdapter<Ingredient> {
+public class GroceryRemoveAdapter extends ArrayAdapter<Ingredient> {
     LayoutInflater inflater;
     Button button;
     GroceryDB groceryDB;
 
-    CookbookRemoveCallback lc;
+    GroceryRemoveCallback lc;
 
-    public CookbookRemoveAdapter(Context context, List<Ingredient> recipeList, CookbookRemoveCallback lc) {
+    public GroceryRemoveAdapter(Context context, List<Ingredient> recipeList, GroceryRemoveCallback lc) {
         super(context, -1, recipeList);
         this.lc = lc;
         inflater = LayoutInflater.from(context);
@@ -55,6 +55,6 @@ public class CookbookRemoveAdapter extends ArrayAdapter<Ingredient> {
 
 }
 
-interface CookbookRemoveCallback {
+interface GroceryRemoveCallback {
     public void itemDeleted ();
 }

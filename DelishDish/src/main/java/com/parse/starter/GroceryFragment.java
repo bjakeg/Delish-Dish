@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by jakegraham on 3/15/16.
  */
-public class GroceryFragment extends Fragment implements CookbookRemoveCallback {
+public class GroceryFragment extends Fragment implements GroceryRemoveCallback {
     ListView listView;
     GroceryDB groceryDB;
 
@@ -121,7 +121,7 @@ public class GroceryFragment extends Fragment implements CookbookRemoveCallback 
         List<Ingredient> ingredientList = new ArrayList<Ingredient>();
         ingredientList = groceryDB.getAllIngredients();
 
-        CookbookRemoveAdapter adapter = new CookbookRemoveAdapter(listView.getContext(), ingredientList, this);
+        GroceryRemoveAdapter adapter = new GroceryRemoveAdapter(listView.getContext(), ingredientList, this);
         listView.setAdapter(adapter);
     }
 
