@@ -6,13 +6,14 @@
     android:paddingBottom="5dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:paddingTop="5dp">
+    android:paddingTop="5dp"
+    android:background="#482030">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@android:color/background_light">
+        android:background="#FFB2B4BA">
 
         <ImageView
             android:id="@+id/recipe_image"
@@ -24,7 +25,7 @@
             android:layout_marginLeft="5dp"/>
 
         <RelativeLayout
-            android:background="@android:color/darker_gray"
+            android:background="#FF626262"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_margin="5dp"
