@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by david on 3/15/16.
@@ -46,6 +47,14 @@ public class PantryDB extends SQLiteOpenHelper {
         contentValues.put(PANTRY_COLUMN_TITLE, ingredient.getTitle());
         contentValues.put(PANTRY_COLUMN_AMOUNT, ingredient.getAmount());
         contentValues.put(PANTRY_COLUMN_QUANTITY, ingredient.getQuantity());
+
+        List<Ingredient> currentList = getAllIngredients();
+
+        for (int i = 0; i < currentList.size(); i++) {
+            if (currentList.get(i).getTitle().equals(ingredient.getTitle())) {
+                return;
+            }
+        }
 
         db.insert(PANTRY_TABLE_NAME, null, contentValues);
     }

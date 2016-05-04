@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jakegraham on 3/15/16.
@@ -45,6 +46,14 @@ public class GroceryDB extends SQLiteOpenHelper {
         contentValues.put(GROCERY_LIST_COLUMN_TITLE, ingredient.getTitle());
         contentValues.put(GROCERY_LIST_COLUMN_AMOUNT, ingredient.getAmount());
         contentValues.put(GROCERY_LIST_COLUMN_QUANTITY, ingredient.getQuantity());
+
+        List<Ingredient> currentList = getAllIngredients();
+
+        for (int i = 0; i < currentList.size(); i++) {
+            if (currentList.get(i).getTitle().equals(ingredient.getTitle())) {
+                return;
+            }
+        }
 
         db.insert(GROCERY_LIST_TABLE_NAME, null, contentValues);
     }

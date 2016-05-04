@@ -81,6 +81,14 @@ public class CookbookDB extends SQLiteOpenHelper {
         byte[] img = getDrawableAsByteArray(recipe.getImage());
         contentValues.put(RECIPES_COLUMN_IMAGE, img);
 
+        List<Recipe> currentRecipes = getAllRecipes();
+
+        for (int i = 0; i < currentRecipes.size(); i++) {
+            if (currentRecipes.get(i).getTitle().equals(recipe.getTitle())) {
+                return;
+            }
+        }
+
         db.insert(RECIPES_TABLE_NAME, null, contentValues);
     }
 

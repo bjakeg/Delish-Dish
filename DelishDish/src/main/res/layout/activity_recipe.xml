@@ -2,12 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#660301">
+    android:background="#482030">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
 
         <RelativeLayout
@@ -32,6 +34,8 @@
                 android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
                 android:id="@+id/recipe_main_image" />
 
         </RelativeLayout>
@@ -39,13 +43,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:background="#361322">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
                 android:layout_centerVertical="true"
                 android:text="Ingredients" />
 
@@ -57,15 +61,30 @@
             android:id="@+id/ingredient_list_view"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:background="#361322"/>
 
+        <LinearLayout
+            android:id="@+id/nop"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="#482030">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text=" " />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:background="#361322">
 
             <TextView
                 android:layout_width="match_parent"
@@ -80,7 +99,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingRight="10dp"
+            android:background="#361322">
 
             <TextView android:id="@+id/recipe_main_instructions"
                 android:layout_width="match_parent"

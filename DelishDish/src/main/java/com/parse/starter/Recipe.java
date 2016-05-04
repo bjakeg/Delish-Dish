@@ -53,11 +53,17 @@ public class Recipe implements Parcelable {
 
     // Add an ingredient to the ingredients list
     public void addIngredient(Ingredient ingredient) {
+        if (ingredients == null) {
+            ingredients = new ArrayList<Ingredient>();
+        }
         ingredients.add(ingredient);
     }
 
     // Add an instruction to the instructions
     public void addInstruction(String instruction) {
+        if (instructions == null) {
+            instructions = new ArrayList<String>();
+        }
         instructions.add(instruction);
     }
 
